@@ -1,8 +1,35 @@
 const headerElement = document.querySelector('header');
 const headerHeight = parseFloat(getComputedStyle(headerElement).height);
 const navigationOne = document.querySelector('.navbar_1 ul');
-const cancel=document.querySelector('.cancel');
-const menu=document.querySelector('.menu');
+const cancel = document.querySelector('.cancel');
+const menu = document.querySelector('.menu');
+
+const back = document.getElementById("prev");
+const forw = document.getElementById("forw");
+const shoes = document.querySelector('.shoes');
+
+const imageElement = document.querySelector('.shoes div');
+const imageWidth = parseFloat(getComputedStyle(imageElement).width);
+console.log(imageWidth);
+
+
+forw.addEventListener('click',()=>{
+    shoes.scrollBy({
+        left:imageWidth,
+        behavior:"smooth"
+
+
+    });
+
+})
+
+back.addEventListener('click',()=>{
+    shoes.scrollBy({
+        left:-imageWidth,
+        behavior:"smooth"
+    });
+
+})
 
 const screenWidth=parseFloat(window.innerWidth);
 const main=document.querySelector('main');
